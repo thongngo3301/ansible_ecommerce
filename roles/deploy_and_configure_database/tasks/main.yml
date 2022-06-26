@@ -1,0 +1,11 @@
+---
+- name: Deploy and configure database
+  tasks:
+    - name: Install MariaDB
+      import_tasks: install_mariadb.yml
+    - name: Configure firewall for Database
+      import_tasks: configure_firewall.yml
+    - name: Configure Database
+      import_tasks: configure_database.yml
+    - name: Load Product Inventory Information to database
+      import_tasks: load_products.yml

@@ -1,0 +1,8 @@
+---
+- name: Download code
+  tasks:
+    - name: Download code
+      become: true
+      git:
+        repo: https://github.com/kodekloudhub/learning-app-ecommerce.git
+        dest: /var/www/html/

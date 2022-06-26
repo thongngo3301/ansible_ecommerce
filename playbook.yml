@@ -1,0 +1,7 @@
+---
+- name: Build an e-commerce app
+  hosts: localhost
+  roles:
+    - deploy_prerequisites
+    - deploy_and_configure_database
+    - deploy_and_configure_web

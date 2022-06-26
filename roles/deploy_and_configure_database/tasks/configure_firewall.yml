@@ -1,0 +1,11 @@
+---
+- name: Configure firewall for database
+  tasks:
+    - name: Configure firewalld
+      become: true
+      firewalld:
+        permanent: true
+        zone: public
+        port: 3306/tcp
+        state: enabled
+        immediate: true

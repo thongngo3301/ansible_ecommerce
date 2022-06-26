@@ -1,0 +1,14 @@
+---
+- name: Install Prerequisites
+  tasks:
+    - name: Install FirewallD
+      become: true
+      yum:
+        name: firewalld
+        state: present
+    - name: Start FirewallD
+      become: true
+      service:
+        name: firewalld
+        state: started
+        enabled: true

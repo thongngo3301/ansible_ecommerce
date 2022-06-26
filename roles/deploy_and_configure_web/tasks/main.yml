@@ -1,0 +1,13 @@
+---
+- name: Deploy and configure web
+  tasks:
+    - name: Install required packages
+      import_tasks: install_packages.yml
+    - name: Configure httpd
+      import_tasks: configure_httpd.yml
+    - name: Start httpd
+      import_tasks: start_httpd.yml
+    - name: Download_code
+      import_tasks: download_code.yml
+    - name: Update index.php
+      import_tasks: update_index.yml
