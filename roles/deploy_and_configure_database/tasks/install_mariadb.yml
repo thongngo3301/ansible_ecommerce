@@ -1,14 +1,11 @@
----
-- name: Install MariaDB
-  tasks:
-    - name: Install mariadb-server
-      become: true
-      yum:
-        - name: mariadb-server
-          state: present
-    - name: Start mariadb-server
-      become: true
-      service:
-        - name: mariadb-server
-          state: started
-          enabled: true
+- name: Install mariadb-server
+  become: true
+  yum:
+      name: mariadb-server
+      state: present
+- name: Start mariadb-server
+  become: true
+  service:
+      name: mariadb
+      state: started
+      enabled: true

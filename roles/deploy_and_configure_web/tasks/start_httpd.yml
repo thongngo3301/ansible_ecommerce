@@ -1,9 +1,6 @@
----
 - name: Start httpd
-  tasks:
-    - name: Start httpd
-      become: true
-      service:
-        - name: httpd
-          state: started
-          enabled: true
+  become: true
+  service:
+      name: httpd
+      state: started
+      enabled: true

@@ -1,9 +1,6 @@
----
-- name: Configure httpd
-  tasks:
-    - name: Change DirectoryIndex index.html to DirectoryIndex index.php to make the php page the default page
-      become: true
-      replace:
-        path: /etc/httpd/conf/httpd.conf
-        regexp: '^DirectoryIndex index.html'
-        replace: DirectoryIndex index.php
+- name: Change DirectoryIndex index.html to DirectoryIndex index.php to make the php page the default page
+  become: true
+  replace:
+    path: /etc/httpd/conf/httpd.conf
+    regexp: '^DirectoryIndex index.html'
+    replace: DirectoryIndex index.php

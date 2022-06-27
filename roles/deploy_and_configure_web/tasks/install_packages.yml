@@ -1,18 +1,16 @@
----
 - name: Install required packages
-  tasks:
-    - name: Install required packages
-      become: true
-      yum:
-        - httpd
-        - php
-        - php-mysql
-        - git
-    - name: Configure firewall for app
-      become: true
-      firewalld:
-        permanent: true
-        zone: public
-        port: 80/tcp
-        state: enabled
-        immediate: true
+  become: true
+  yum:
+    name:
+      - httpd
+      - php
+      - php-mysql
+      - git
+- name: Configure firewall for app
+  become: true
+  firewalld:
+    permanent: true
+    zone: public
+    port: 80/tcp
+    state: enabled
+    immediate: true

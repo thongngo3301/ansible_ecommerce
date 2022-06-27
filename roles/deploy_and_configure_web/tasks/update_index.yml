@@ -1,14 +1,11 @@
----
 - name: Update index
-  tasks:
-    - name: Update index
-      become: true
-      replace:
-        path: /var/www/html/index.php
-        regexp: '172.20.1.101'
-        replace: localhost
-    - name: Restart httpd
-      become: true
-      service:
-        - name: httpd
-          state: restarted
+  become: true
+  replace:
+    path: /var/www/html/index.php
+    regexp: '172.20.1.101'
+    replace: localhost
+- name: Restart httpd
+  become: true
+  service:
+      name: httpd
+      state: restarted

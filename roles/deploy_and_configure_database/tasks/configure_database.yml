@@ -1,13 +1,12 @@
----
-- name: Configure database
-  tasks:
-    - name: Create database 'ecomdb'
-      mysql_db:
-        name: ecomdb
-        state: present
-    - name: Create user 'ecomuser'
-      mysql_user:
-        name: ecomuser
-        password: 'ecompassword'
-        priv: '*.*:ALL'
-        state: present
+- name: Create database 'ecomdb'
+  become: true
+  mysql_db:
+    name: ecomdb
+    state: present
+- name: Create user 'ecomuser'
+  become: true
+  mysql_user:
+    name: ecomuser
+    password: 'ecompassword'
+    priv: '*.*:ALL'
+    state: present

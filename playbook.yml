@@ -1,6 +1,6 @@
 ---
 - name: Build an e-commerce app
-  hosts: localhost
+  hosts: ecom_servers
   roles:
     - deploy_prerequisites
     - deploy_and_configure_database
